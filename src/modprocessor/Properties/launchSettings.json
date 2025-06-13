@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Compress Mod Test": {
+      "commandName": "Project",
+      "commandLineArgs": "compress .\\TestFiles\\flight.mod"
+    }
+  }
+}
