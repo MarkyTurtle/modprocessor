@@ -128,12 +128,42 @@ namespace modprocessor.libs
                         writer.ClearBytes(sample.Length);
                         writer.BaseStream.Position = sample.StartOffset;
                         writer.Write(sample.PackedSample);
-                        Console.WriteLine($"Sample: '{sample.Name}' - packed.");
                     }
-                    else
+
+                }
+            }
+
+        }
+
+        public void DepackSamples()
+        {
+            foreach (var sample in Samples)
+            {
+                if (!sample.IsEmpty)
+                {
+                    sample.SampleData = Depack4Bit(sample.SampleData);
+                    Console.WriteLine($"Sample: '{sample.Name}' - packed.");
+                }
+                else
+                {
+                    Console.WriteLine($"Sample: '{sample.Name}' - is unused.");
+                }
+            }
+
+            // write packed sample back over original sample data
+            using (var memoryStream = new MemoryStream(ModuleData))
+            using (var writer = new BigEndianBinaryWriter(memoryStream))
+            {
+                foreach (var sample in Samples)
+                {
+                    if (!sample.IsEmpty)
                     {
-                        Console.WriteLine($"Sample: '{sample.Name}' - is unused.");
+                        // writer.BaseStream.Position = sample.StartOffset;
+                        // writer.ClearBytes(sample.Length);
+                        writer.BaseStream.Position = sample.StartOffset;
+                        writer.Write(sample.SampleData);
                     }
+
                 }
             }
 
@@ -144,7 +174,23 @@ namespace modprocessor.libs
 
         private int[] DeltaTable = { 0, 1, 2, 4, 8, 16, 32, 64, 128, -64, -32, -16, -8, -4, -2, -1 };
 
-        private byte[] Pack4Bit(byte[] source)
+
+        private byte[] Depack4Bit(byte[] source)
+        {
+            var depacked = new byte[source.Length];
+
+            for (int i=0; i<source.Length/2; i++)
+            {
+                byte value = source[i];
+                byte nibble1 = (byte)(value & 0x0f);
+                byte nibble2 = (byte)((value >> 4) & 0x0f);
+                depacked[i * 2] = (byte)DeltaTable[nibble1];
+                depacked[(i*2)+1] = (byte)DeltaTable[nibble2];
+            }
+            return depacked;
+        }
+
+            private byte[] Pack4Bit(byte[] source)
         {
             // Make even number of bytes
             if ((source.Length & 0x1) == 1)

@@ -1,0 +1,122 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\SourceCode\\Amiga\\modprocessor\\src\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5D3CB2C5-C151-4F2C-AC50-B36BE4C394ED}|modprocessor\\modprocessor.csproj|c:\\sourcecode\\amiga\\modprocessor\\src\\modprocessor\\libs\\protrackermodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D3CB2C5-C151-4F2C-AC50-B36BE4C394ED}|modprocessor\\modprocessor.csproj|solutionrelative:modprocessor\\libs\\protrackermodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D3CB2C5-C151-4F2C-AC50-B36BE4C394ED}|modprocessor\\modprocessor.csproj|c:\\sourcecode\\amiga\\modprocessor\\src\\modprocessor\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D3CB2C5-C151-4F2C-AC50-B36BE4C394ED}|modprocessor\\modprocessor.csproj|solutionrelative:modprocessor\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D3CB2C5-C151-4F2C-AC50-B36BE4C394ED}|modprocessor\\modprocessor.csproj|c:\\sourcecode\\amiga\\modprocessor\\src\\modprocessor\\commands\\compress\\decompresscommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D3CB2C5-C151-4F2C-AC50-B36BE4C394ED}|modprocessor\\modprocessor.csproj|solutionrelative:modprocessor\\commands\\compress\\decompresscommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D3CB2C5-C151-4F2C-AC50-B36BE4C394ED}|modprocessor\\modprocessor.csproj|c:\\sourcecode\\amiga\\modprocessor\\src\\modprocessor\\libs\\protrackersample.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D3CB2C5-C151-4F2C-AC50-B36BE4C394ED}|modprocessor\\modprocessor.csproj|solutionrelative:modprocessor\\libs\\protrackersample.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D3CB2C5-C151-4F2C-AC50-B36BE4C394ED}|modprocessor\\modprocessor.csproj|c:\\sourcecode\\amiga\\modprocessor\\src\\modprocessor\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{5D3CB2C5-C151-4F2C-AC50-B36BE4C394ED}|modprocessor\\modprocessor.csproj|solutionrelative:modprocessor\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D3CB2C5-C151-4F2C-AC50-B36BE4C394ED}|modprocessor\\modprocessor.csproj|c:\\sourcecode\\amiga\\modprocessor\\src\\modprocessor\\commands\\compress\\compresscommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D3CB2C5-C151-4F2C-AC50-B36BE4C394ED}|modprocessor\\modprocessor.csproj|solutionrelative:modprocessor\\commands\\compress\\compresscommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\SourceCode\\Amiga\\modprocessor\\src\\modprocessor\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "modprocessor\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\SourceCode\\Amiga\\modprocessor\\src\\modprocessor\\Properties\\launchSettings.json",
+              "RelativeToolTip": "modprocessor\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-06-14T10:05:39.628Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\SourceCode\\Amiga\\modprocessor\\src\\modprocessor\\Program.cs",
+              "RelativeDocumentMoniker": "modprocessor\\Program.cs",
+              "ToolTip": "C:\\SourceCode\\Amiga\\modprocessor\\src\\modprocessor\\Program.cs",
+              "RelativeToolTip": "modprocessor\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-14T09:56:47.47Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DecompressCommand.cs",
+              "DocumentMoniker": "C:\\SourceCode\\Amiga\\modprocessor\\src\\modprocessor\\Commands\\Compress\\DecompressCommand.cs",
+              "RelativeDocumentMoniker": "modprocessor\\Commands\\Compress\\DecompressCommand.cs",
+              "ToolTip": "C:\\SourceCode\\Amiga\\modprocessor\\src\\modprocessor\\Commands\\Compress\\DecompressCommand.cs",
+              "RelativeToolTip": "modprocessor\\Commands\\Compress\\DecompressCommand.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAgwCcAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-14T09:53:51.901Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProtrackerSample.cs",
+              "DocumentMoniker": "C:\\SourceCode\\Amiga\\modprocessor\\src\\modprocessor\\libs\\ProtrackerSample.cs",
+              "RelativeDocumentMoniker": "modprocessor\\libs\\ProtrackerSample.cs",
+              "ToolTip": "C:\\SourceCode\\Amiga\\modprocessor\\src\\modprocessor\\libs\\ProtrackerSample.cs",
+              "RelativeToolTip": "modprocessor\\libs\\ProtrackerSample.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAhwB0AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-14T09:06:46.375Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProtrackerModule.cs",
+              "DocumentMoniker": "C:\\SourceCode\\Amiga\\modprocessor\\src\\modprocessor\\libs\\ProtrackerModule.cs",
+              "RelativeDocumentMoniker": "modprocessor\\libs\\ProtrackerModule.cs",
+              "ToolTip": "C:\\SourceCode\\Amiga\\modprocessor\\src\\modprocessor\\libs\\ProtrackerModule.cs",
+              "RelativeToolTip": "modprocessor\\libs\\ProtrackerModule.cs",
+              "ViewState": "AgIAAJEAAAAAAAAAAADwv5wAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-14T08:50:52.303Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CompressCommand.cs",
+              "DocumentMoniker": "C:\\SourceCode\\Amiga\\modprocessor\\src\\modprocessor\\Commands\\Compress\\CompressCommand.cs",
+              "RelativeDocumentMoniker": "modprocessor\\Commands\\Compress\\CompressCommand.cs",
+              "ToolTip": "C:\\SourceCode\\Amiga\\modprocessor\\src\\modprocessor\\Commands\\Compress\\CompressCommand.cs",
+              "RelativeToolTip": "modprocessor\\Commands\\Compress\\CompressCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-14T08:50:37.558Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

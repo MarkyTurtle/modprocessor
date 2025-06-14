@@ -3,6 +3,10 @@
     "Compress Mod Test": {
       "commandName": "Project",
       "commandLineArgs": "compress .\\TestFiles\\flight.mod"
+    },
+    "Decompress Mod Test": {
+      "commandName": "Project",
+      "commandLineArgs": "decompress .\\TestFiles\\flight.mod.4bit"
     }
   }
 }
