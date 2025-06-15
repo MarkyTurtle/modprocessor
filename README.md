@@ -1,4 +1,4 @@
-#ModProceesor
+# ModProceesor
 This is a command line utility, written in C#, for preprocessing Protracker mod files.
 
 Usage:
