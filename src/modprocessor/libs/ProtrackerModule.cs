@@ -300,18 +300,15 @@ namespace modprocessor.libs
         {
             var depacked = new byte[source.Length];
 
-            for (int i=0; i<source.Length/2; i++)
+            depacked[0] = source[0];
+            for (int i = 1; i < source.Length / 2; i++)
             {
                 byte value = source[i];
                 byte nibble1 = (byte)(value & 0x0f);
                 byte nibble2 = (byte)((value >> 4) & 0x0f);
 
-                if (i == 0)
-                {
-                    depacked[0] = 
-                }
                 depacked[i * 2] = (byte)DeltaTable[nibble1];
-                depacked[(i*2)+1] = (byte)DeltaTable[nibble2];
+                depacked[(i * 2) + 1] = (byte)DeltaTable[nibble2];
             }
             return depacked;
         }
