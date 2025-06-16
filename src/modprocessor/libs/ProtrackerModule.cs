@@ -295,38 +295,91 @@ namespace modprocessor.libs
 
         }
         
-        int[] delttable = [2, 4, 8, 16, 32, 64, 128, 200, -2, -4, -8, -16, -32, -64, -128, -200];
 
-        private sbyte[] Pack4BitDelta(byte[] sampleData)
+        private byte[] Depack4BitDelta(byte[] source)
         {
-            sbyte[] packedSample = new sbyte[sampleData.Length/2];
+            var depacked = new byte[source.Length];
+
+            for (int i=0; i<source.Length/2; i++)
+            {
+                byte value = source[i];
+                byte nibble1 = (byte)(value & 0x0f);
+                byte nibble2 = (byte)((value >> 4) & 0x0f);
+
+                if (i == 0)
+                {
+                    depacked[0] = 
+                }
+                depacked[i * 2] = (byte)DeltaTable[nibble1];
+                depacked[(i*2)+1] = (byte)DeltaTable[nibble2];
+            }
+            return depacked;
+        }
+        
+
+        private byte[] Pack4BitDelta(byte[] sampleData)
+        {
+            byte[] deltaIndexes = new byte[sampleData.Length-1];
 
             int lastSampleValue = (sbyte)sampleData[0];
-            packedSample[0] = (sbyte)lastSampleValue;
+            deltaIndexes[0] = (byte)lastSampleValue;
             for (int i = 1; i < sampleData.Length; i++)
             {
-                int deltaIndex = 0;
                 int deltaValue = lastSampleValue - sampleData[i];
                 int quantisedDeltaIndex = QuantiseDeltaValue(deltaValue);
-                lastSampleValue = (sbyte)Math.Min(255, lastSampleValue + delttable[quantisedDeltaIndex]);
-                packedSample[i] = (sbyte)quantisedDeltaIndex;
+                lastSampleValue = Math.Clamp(lastSampleValue + delttable[quantisedDeltaIndex], -128, 127);
+                deltaIndexes[i] = (byte)quantisedDeltaIndex;
+            }
 
+            byte[] packedSample = new byte[(sampleData.Length / 2)+2];
+            var pos = 1;
+            for (var i = 1; i < sampleData.Length; i += 2)
+            {
+                var result = ((deltaIndexes[i] & 0xf) << 4) + (deltaIndexes[i + 1] & 0x0f);
+                packedSample[pos] = (byte)result;
+                pos++;
             }
 
             return packedSample;
 
         }
+        
+        int[] delttable = [2, 4, 8, 16, 32, 64, 128, 200, -2, -4, -8, -16, -32, -64, -128, -200];
 
         private int QuantiseDeltaValue(int deltaValue)
         {
             int deltaIndex = 0;
-            int smallestDifference = 255;
-            for (int i = 0;i < delttable.Length; i++)
+            int smallestDifference = 0;
+            if (deltaValue >= 0)
             {
-                var deltaDifference = delttable[i] - deltaValue;
+                deltaIndex = 7;
+                smallestDifference = 255;
+                for (int i = 0; i < 8; i++)
+                {
+                    var deltaDifference = delttable[i] - deltaValue;
+                    if (smallestDifference > Math.Abs(deltaDifference))
+                    {
+                        deltaIndex = i;
+                        smallestDifference = Math.Abs(deltaDifference);
+                    }
+                }
+            }
+            else
+            {
+                deltaIndex = 15;
+                smallestDifference = 255;
+                for (int i = 0; i < 8; i++)
+                {
+                    var deltaDifference = delttable[i + 8] - deltaValue;
+                    if (smallestDifference > Math.Abs(deltaDifference))
+                    {
+                        deltaIndex = i;
+                        smallestDifference = Math.Abs(deltaDifference);
+                    }
+                }
             }
 
-            return 1;
+            return deltaIndex;
         }
 
     }
