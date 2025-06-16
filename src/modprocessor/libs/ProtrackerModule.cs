@@ -258,6 +258,77 @@ namespace modprocessor.libs
             return deltaPos;
         }
 
+
+
+
+        public void PackSamplesDelta()
+        {
+            foreach (var sample in Samples)
+            {
+                if (!sample.IsEmpty)
+                {
+                    sample.PackedSample = Pack4BitDelta(sample.SampleData);
+                    Console.WriteLine($"Sample: '{sample.Name}' - packed.");
+                }
+                else
+                {
+                    Console.WriteLine($"Sample: '{sample.Name}' - is unused.");
+                }
+            }
+
+            // write packed sample back over original sample data
+            using (var memoryStream = new MemoryStream(ModuleData))
+            using (var writer = new BigEndianBinaryWriter(memoryStream))
+            {
+                foreach (var sample in Samples)
+                {
+                    if (!sample.IsEmpty)
+                    {
+                        writer.BaseStream.Position = sample.StartOffset;
+                        writer.ClearBytes(sample.Length);
+                        writer.BaseStream.Position = sample.StartOffset;
+                        writer.Write(sample.PackedSample);
+                    }
+
+                }
+            }
+
+        }
+        
+        int[] delttable = [2, 4, 8, 16, 32, 64, 128, 200, -2, -4, -8, -16, -32, -64, -128, -200];
+
+        private sbyte[] Pack4BitDelta(byte[] sampleData)
+        {
+            sbyte[] packedSample = new sbyte[sampleData.Length/2];
+
+            int lastSampleValue = (sbyte)sampleData[0];
+            packedSample[0] = (sbyte)lastSampleValue;
+            for (int i = 1; i < sampleData.Length; i++)
+            {
+                int deltaIndex = 0;
+                int deltaValue = lastSampleValue - sampleData[i];
+                int quantisedDeltaIndex = QuantiseDeltaValue(deltaValue);
+                lastSampleValue = (sbyte)Math.Min(255, lastSampleValue + delttable[quantisedDeltaIndex]);
+                packedSample[i] = (sbyte)quantisedDeltaIndex;
+
+            }
+
+            return packedSample;
+
+        }
+
+        private int QuantiseDeltaValue(int deltaValue)
+        {
+            int deltaIndex = 0;
+            int smallestDifference = 255;
+            for (int i = 0;i < delttable.Length; i++)
+            {
+                var deltaDifference = delttable[i] - deltaValue;
+            }
+
+            return 1;
+        }
+
     }
 
 }

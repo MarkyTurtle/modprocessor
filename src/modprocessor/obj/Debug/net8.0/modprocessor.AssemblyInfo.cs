@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("modprocessor")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+62302915404659cd2b8d341de6f33852ad9aac09")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c283ff5a086e9d85da0228ee3a7b51ee5dc26ae1")]
 [assembly: System.Reflection.AssemblyProductAttribute("modprocessor")]
 [assembly: System.Reflection.AssemblyTitleAttribute("modprocessor")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
